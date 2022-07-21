@@ -1,9 +1,12 @@
-#include "Renderer.h"
-Renderer::Renderer() {}
+#include "include/Renderer.h"
+Renderer::Renderer() {
+	//renderlist = new std::list<sf::Drawable>();
+}
 Renderer::~Renderer() {}
 
 void Renderer::tick(ECS::World* world, float deltaTime) {
 	Engine::getInstance().win->clear();		//CLEARS SCREEN
+	//clear is in platformsys
 
 	world->each<Transform, Sprite2D>([&](ECS::Entity* ent,
 		ECS::ComponentHandle<Transform> transform,
@@ -20,10 +23,17 @@ void Renderer::tick(ECS::World* world, float deltaTime) {
 
 			sprite->s.setPosition(transform->x, transform->y);
 
+			//renderlist->push_back(sprite->s);
+
+			/*for (int i = 0; i < renderlist->size(); i++) {
+				Engine::getInstance().win->draw(renderlist[i]);
+			}*/
+
 			Engine::getInstance().win->draw(sprite->s);
 		});
 
-	Engine::getInstance().win->display();	//DRAWS BUFFER TO SCREEN
+	//Engine::getInstance().win->display();	//DRAWS BUFFER TO SCREEN
+	//display is in platformsys
 }
 
 sf::Texture* Renderer::load_texture(std::string p) {

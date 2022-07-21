@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RPEngine", "RPEngine.vcxproj", "{3FB9550C-F91C-4DBD-9F6E-708FB2D58AC0}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RPGame", "RPGame\RPGame.vcxproj", "{74CEBB54-06E7-40F9-AACB-C8A9443A839A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3FB9550C-F91C-4DBD-9F6E-708FB2D58AC0} = {3FB9550C-F91C-4DBD-9F6E-708FB2D58AC0}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +26,14 @@ Global
 		{3FB9550C-F91C-4DBD-9F6E-708FB2D58AC0}.Release|x64.Build.0 = Release|x64
 		{3FB9550C-F91C-4DBD-9F6E-708FB2D58AC0}.Release|x86.ActiveCfg = Release|Win32
 		{3FB9550C-F91C-4DBD-9F6E-708FB2D58AC0}.Release|x86.Build.0 = Release|Win32
+		{74CEBB54-06E7-40F9-AACB-C8A9443A839A}.Debug|x64.ActiveCfg = Debug|x64
+		{74CEBB54-06E7-40F9-AACB-C8A9443A839A}.Debug|x64.Build.0 = Debug|x64
+		{74CEBB54-06E7-40F9-AACB-C8A9443A839A}.Debug|x86.ActiveCfg = Debug|Win32
+		{74CEBB54-06E7-40F9-AACB-C8A9443A839A}.Debug|x86.Build.0 = Debug|Win32
+		{74CEBB54-06E7-40F9-AACB-C8A9443A839A}.Release|x64.ActiveCfg = Release|x64
+		{74CEBB54-06E7-40F9-AACB-C8A9443A839A}.Release|x64.Build.0 = Release|x64
+		{74CEBB54-06E7-40F9-AACB-C8A9443A839A}.Release|x86.ActiveCfg = Release|Win32
+		{74CEBB54-06E7-40F9-AACB-C8A9443A839A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

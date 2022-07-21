@@ -1,1 +1,19 @@
-﻿  RPEngine.vcxproj -> C:\Users\Ariel\source\repos\RPEngine\x64\Debug\RPEngine.lib
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(499,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  PlatformSystem.cpp
+C:\Users\Ariel\source\repos\RPEngine\PlatformSystem.cpp(25,87): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Ariel\source\repos\RPEngine\PlatformSystem.cpp(25,47): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\Ariel\source\repos\RPEngine\PlatformSystem.cpp(26,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Ariel\source\repos\RPEngine\PlatformSystem.cpp(26,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Ariel\source\repos\RPEngine\PlatformSystem.cpp(33,25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Ariel\source\repos\RPEngine\PlatformSystem.cpp(34,25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Ariel\source\repos\RPEngine\PlatformSystem.cpp(36,24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Ariel\source\repos\RPEngine\PlatformSystem.cpp(37,24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  RPEngine.vcxproj -> C:\Users\Ariel\source\repos\RPEngine\RPEngine\lib\RPEngine.lib
