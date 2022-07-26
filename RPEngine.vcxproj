@@ -167,6 +167,7 @@
     <ClCompile Include="AnimationSystem.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="InputSystem.cpp" />
+    <ClCompile Include="LoaderSystem.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MovementSystem.cpp" />
     <ClCompile Include="PhysicsSystem.cpp" />
@@ -181,6 +182,7 @@
     <ClInclude Include="include\ECS.h" />
     <ClInclude Include="include\Engine.h" />
     <ClInclude Include="include\InputSystem.h" />
+    <ClInclude Include="include\LoaderSystem.h" />
     <ClInclude Include="include\main.h" />
     <ClInclude Include="include\MovementSystem.h" />
     <ClInclude Include="include\PhysicsSystem.h" />

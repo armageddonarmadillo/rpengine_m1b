@@ -1,12 +1,15 @@
 #include "include/PlatformSystem.h"
 #include "include/Engine.h"
+#include "include/LoaderSystem.h"
+#include <iostream>
 #include <iostream>
 #define add push_back
 
 
 PlatformSystem::PlatformSystem() {
 	points = new std::list<Click*>();
-	rects = new std::list<sf::RectangleShape>();
+	rects = LoaderSystem::getInstance().load_level("test.testfile");
+
 }
 PlatformSystem::~PlatformSystem() {}
 
@@ -42,10 +45,25 @@ void PlatformSystem::tick(ECS::World* world, float deltatime) {
 				//points->clear();
 			}
 
-			sf::RectangleShape rect;
-			rect.setSize(sf::Vector2f(w, h));
-			rect.setPosition(ix, iy);
-			Engine::getInstance().win->draw(rect);
+			if (input->lm) {
+				sf::RectangleShape rect;
+				rect.setSize(sf::Vector2f(w, h));
+				rect.setPosition(ix, iy);
+				Engine::getInstance().win->draw(rect);
+			}
+
+			//platform removal
+			for (std::list<sf::RectangleShape>::iterator r = rects->begin(); r != rects->end(); r++) {
+				if (input->rm &&
+					r->getPosition().x < sf::Mouse::getPosition().x - Engine::getInstance().win->getPosition().x &&
+					sf::Mouse::getPosition().x - Engine::getInstance().win->getPosition().x < r->getPosition().x + r->getLocalBounds().width &&
+					r->getPosition().y < sf::Mouse::getPosition().y - Engine::getInstance().win->getPosition().y &&
+					sf::Mouse::getPosition().y - Engine::getInstance().win->getPosition().y < r->getPosition().y + r->getLocalBounds().height
+					) {
+					rects->erase(r);
+					break;
+				}
+			}
 
 			for (std::list<sf::RectangleShape>::iterator r = rects->begin(); r != rects->end(); r++) { //this iterates through the rects list. r IS a rect
 				sf::RectangleShape fakerect;
@@ -53,6 +71,7 @@ void PlatformSystem::tick(ECS::World* world, float deltatime) {
 				fakerect.setPosition(r->getPosition().x, r->getPosition().y);
 				Engine::getInstance().win->draw(fakerect);
 			}
+
 
 			//this iterates through the rects list. r IS a rect
 			for (std::list<sf::RectangleShape>::iterator r = rects->begin(); r != rects->end(); r++) {
